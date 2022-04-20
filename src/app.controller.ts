@@ -1,8 +1,8 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
-import { ApiTags } from '@nestjs/swagger';
+// import { ApiTags } from '@nestjs/swagger';
 
-@Controller('api')
+@Controller('')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
@@ -12,9 +12,10 @@ export class AppController {
   }
 
   // 1. 固定路径：
-  // 可以匹配到 get请求，http://localhost:3000/api/list
-  @Get('hack')
-  @ApiTags('用户')
+  // 可以匹配到 get请求，http://localhost:3000/api/hack
+  @Get('api/hack')
+  // @Post('hack')
+  // @ApiTags('用户')
   hack(): object {
     return this.appService.getHack();
   }
