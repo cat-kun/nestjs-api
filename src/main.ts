@@ -6,6 +6,8 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.setGlobalPrefix('api'); // 设置全局路由前缀
+
   const options = new DocumentBuilder()
     .setTitle('nest后台API')
     .setDescription('供后台管理界面调用的服务端API')
