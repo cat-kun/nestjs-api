@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Query } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { HackService } from './getHack.service';
 
 @Controller('getHack')
@@ -18,5 +18,4 @@ export class HackController {
       return this.hackService.getHack();
     }
   }
-
 }
